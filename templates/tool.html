@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Bouncing Ball Simulation</h1>
+    <form id="plotForm">
+        <label for="r">Mass (kg):</label>
+        <input type="number" id="m" name="m" value="1" min="1" step="1" required>
+        <label for="r">Restitution Coefficient (r):</label>
+        <input type="number" id="r" name="r" value="0.9" step="0.01"min="0" max="1" required>
+        <label for="ps">Pixel Scale</label>
+        <input type="number" id="ps" name="ps" value="50" step="1"min="10" max="300" required>
+        <label for="dt">Time Step (dt):</label>
+        <input type="number" id="dt" name="dt" value="0.01" step="0.001" required>
+        <label for="y0">Initial Height (y0):</label>
+        <input type="number" id="y0" name="y0" value="10" step="1" required>
+        <label for="v0">Initial Velocity (v0):</label>
+        <input type="number" id="v0" name="v0" value="0.0" step="0.1" required>
+        <label for="time_limit">Time Limit (seconds):</label>
+        <input type="number" id="time_limit" name="time_limit" value="10.0" step="0.1" required>
+        <button id="btn" type="submit" class="btn1">Generate Plots</button>
+    </form>
+
+    <div class="mt-3 buttons" id="btns">
+        <button id="pauseButton" class="btn btn-warning">
+            <i class="fas fa-pause"></i> Pause
+        </button>
+        <button id="continueButton" class="btn btn-success">
+            <i class="fas fa-play"></i> Continue
+        </button>
+        <button id="resetButton" class="btn btn-danger">
+            <i class="fas fa-redo-alt"></i> Reset
+        </button>
+    </div>
+    <canvas id="simulationCanvas"></canvas>
+    <div id="plotResult"></div>
+    {% endblock %}

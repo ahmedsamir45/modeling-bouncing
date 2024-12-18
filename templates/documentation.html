@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+    {% block content %}
+        
+
+    <h1>Documentation: Euler's Method</h1>
+    <div class="container">
+        <h2>Euler's Method</h2>
+        <p>Euler's method is a simple and first-order numerical method for solving ordinary differential equations (ODEs). It uses the following update equations:</p>
+    
+        <h2>Position Update Equation:</h2>
+        <p>
+            The update equation for the position (\(y\)) is:
+        </p>
+        <p>
+            \[
+            y_{n+1} = y_n + v_n \cdot \Delta t
+            \]
+            Where:
+            - \(y_n\) is the current height (position),
+            - \(v_n\) is the current velocity,
+            - \(\Delta t\) is the time step.
+        </p>
+    
+        <h2>Velocity Update Equation:</h2>
+        <p>
+            The update equation for the velocity (\(v\)) is:
+        </p>
+        <p>
+            \[
+            v_{n+1} = v_n - g \cdot \Delta t
+            \]
+            Where:
+            - \(v_n\) is the current velocity,
+            - \(g\) is the acceleration due to gravity (approximately \(9.81 \, \text{m/s}^2\)),
+            - \(\Delta t\) is the time step.
+        </p>
+    
+        <h2>Ordinary Differential Equations (ODEs):</h2>
+        <p>
+            The system we are solving involves the following ODEs for **position** and **velocity**:
+        </p>
+        <p>
+            \[
+            \frac{dy}{dt} = v(t)
+            \]
+            \[
+            \frac{dv}{dt} = -g
+            \]
+            Where:
+            - \(y(t)\) is the position of the object as a function of time,
+            - \(v(t)\) is the velocity of the object as a function of time,
+            - \(g\) is the gravitational acceleration.
+        </p>
+    
+        <h2>Kinetic Energy (KE):</h2>
+        <p>
+            The **kinetic energy** of the object can be calculated using the following equation:
+        </p>
+        <p>
+            \[
+            KE = \frac{1}{2} m v^2
+            \]
+            Where:
+            - \(m\) is the mass of the object,
+            - \(v\) is the velocity of the object.
+        </p>
+    
+        <h2>Coefficient of Restitution (Elastic Collision):</h2>
+        <p>
+            When the object hits the ground, the velocity is reversed and scaled by the **coefficient of restitution** (\(r\)), which determines how "bouncy" the object is:
+        </p>
+        <p>
+            \[
+            v_{n+1} = -r \cdot v_n
+            \]
+            Where:
+            - \(v_n\) is the velocity just before the bounce,
+            - \(r\) is the coefficient of restitution, which lies between 0 (no bounce) and 1 (perfect bounce).
+        </p>
+    
+        <h2>Summary of Euler's Method Equations:</h2>
+        <ul>
+            <li>Position Update: \( y_{n+1} = y_n + v_n \cdot \Delta t \)</li>
+            <li>Velocity Update: \( v_{n+1} = v_n - g \cdot \Delta t \)</li>
+            <li>Velocity after bounce: \( v_{n+1} = -r \cdot v_n \)</li>
+            <li>Kinetic Energy: \( KE = \frac{1}{2} m v^2 \)</li>
+        </ul>
+    </div>
+    
+    {% endblock %}
